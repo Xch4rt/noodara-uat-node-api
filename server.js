@@ -8,12 +8,12 @@ const PORT = 3000;
 const server = createServer((req, res) => {
   if (req.method === 'GET' && req.url === '/') {
     res.writeHead(200, { 'content-type': 'application/json' });
-    res.end(JSON.stringify({ service: 'node-api', version: 'B', ok: true }));
+    res.end(JSON.stringify({ service: 'node-api', version: 'C', ok: true }));
     return;
   }
 
   if (req.method === 'GET' && req.url === '/health') {
-    res.writeHead(200, { 'content-type': 'text/plain' });
+    res.writeHead(500, { 'content-type': 'text/plain' });
     res.end('ok');
     return;
   }
